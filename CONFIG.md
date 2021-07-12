@@ -48,6 +48,7 @@ that config.
 - [leanls](#leanls)
 - [metals](#metals)
 - [nimls](#nimls)
+- [nomadls](#nomadls)
 - [ocamlls](#ocamlls)
 - [ocamllsp](#ocamllsp)
 - [omnisharp](#omnisharp)
@@ -3694,6 +3695,29 @@ require'lspconfig'.nimls.setup{}
 ```
 
 
+## nomadls
+
+https://github.com/ttys3/nomad-lsp
+Language Server Protocol for Nomad.
+
+
+
+**Snippet to enable the language server:**
+```lua
+require'lspconfig'.nomadls.setup{}
+```
+
+**Commands and default values:**
+```lua
+  Commands:
+  
+  Default Values:
+    cmd = { "nomad-lsp" }
+    filetypes = { "nomad" }
+    root_dir = root_pattern(".git")
+```
+
+
 ## ocamlls
 
 https://github.com/ocaml-lsp/ocaml-language-server
@@ -3746,7 +3770,7 @@ require'lspconfig'.ocamllsp.setup{}
   
   Default Values:
     cmd = { "ocamllsp" }
-    filetypes = { "ocamlinterface", "ocaml", "ocamllex", "menhir", "reason" }
+    filetypes = { "ocaml", "ocamllex", "menhir", "reason", "ocamlinterface" }
     get_language_id = function(_, ftype)
       return language_id_of[ftype]
     end
